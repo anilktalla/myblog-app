@@ -1,4 +1,8 @@
 import { Client } from "@notionhq/client";
+import {
+  DatabaseObjectResponse,
+  PageObjectResponse,
+} from "@notionhq/client/build/src/api-endpoints";
 
 const notion = new Client({ auth: process.env.NOTION_API_KEY });
 
@@ -74,13 +78,39 @@ export const getDatabase = async (): Promise<NotionPage[]> => {
     database_id: process.env.NOTION_DATABASE_ID!,
   });
 
-  console.log(JSON.stringify(response.results));
-  return response.results as NotionPage[];
+  return response.results.map((page) => {
+    if (!("properties" in page)) {
+      throw new Error("Unexpected response structure");
+    }
+    return mapNotionPageToCustomType(page as PageObjectResponse);
+  });
 };
+
+function mapNotionPageToCustomType(page: PageObjectResponse): NotionPage {
+  return {
+    id: page.id,
+    created_time: page.created_time,
+    last_edited_time: page.last_edited_time,
+    properties: {
+      Tags: page.properties.Tags as NotionPage["properties"]["Tags"],
+      "Post Status": page.properties[
+        "Post Status"
+      ] as NotionPage["properties"]["Post Status"],
+      "Featured Image": page.properties[
+        "Featured Image"
+      ] as NotionPage["properties"]["Featured Image"],
+      Title: page.properties.Title as NotionPage["properties"]["Title"],
+      Categories: page.properties
+        .Categories as NotionPage["properties"]["Categories"],
+      Content: page.properties.Content as NotionPage["properties"]["Content"],
+    },
+    url: page.url,
+  };
+}
 
 export const getPage = async (pageId: string): Promise<NotionPage> => {
   const response = await notion.pages.retrieve({ page_id: pageId });
-  return response as NotionPage;
+  return mapNotionPageToCustomType(response as PageObjectResponse);
 };
 
 export const getPageTitle = (page: NotionPage): string => {
