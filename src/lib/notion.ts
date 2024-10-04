@@ -1,6 +1,5 @@
 import { Client } from "@notionhq/client";
 import {
-  DatabaseObjectResponse,
   PageObjectResponse,
 } from "@notionhq/client/build/src/api-endpoints";
 
