@@ -8,7 +8,7 @@ import Blurb from "./blurb";
 export default function AboutMe() {
   return (
     <div className="bg-primary-foreground flex items-center justify-center p-8">
-      <div className=" mx-auto">
+      <div className="mx-auto">
         <div className="flex flex-col md:flex-row items-center md:items-start gap-8">
           <div className="w-48 h-48 relative">
             <Image
@@ -23,19 +23,19 @@ export default function AboutMe() {
           </div>
           <div className="flex-1 text-center md:text-left">
             <h1 className="text-4xl md:text-6xl font-bold mb-2">
-              Hello, I'm Anil Talla
+              Hello, I&apos;m Anil Talla
             </h1>
             <h2 className="text-2xl md:text-3xl text-gray-400 mb-4">
               Director of Engineering at Autodesk, Inc.
             </h2>
             <p className="text-lg mb-6">
-              I'm a passionate software engineering technology leader who loves
+              I&apos;m a passionate software engineering technology leader who loves
               building products and solving complex business problems in a
-              simple way. Though I enjoy leading & managing engineering teams, I
+              simple way. Though I enjoy leading &amp; managing engineering teams, I
               also love coding, architecting, and sharing my learnings.
             </p>
             <p className="text-lg mb-8">
-              I am here to share knowledge, visit my profile & stay connected
+              I am here to share knowledge, visit my profile &amp; stay connected
               with me.
             </p>
             <Blurb />
