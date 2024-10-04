@@ -1,4 +1,4 @@
-import { getPage, getPageTitle, getPageContent,getPageTags, getPageCategories, getPageFeaturedImage } from '@/lib/notion';
+import { getPage, getPageTitle , getPageContent,getPageTags, getPageCategories, getPageFeaturedImage } from '@/lib/notion';
 import Link from 'next/link';
 import Image from 'next/image';
 import { Button } from "@/components/ui/button"
