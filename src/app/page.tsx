@@ -2,9 +2,6 @@ import {
   getDatabase,
   NotionPage,
   getPageTitle,
-  getPageContent,
-  getPageStatus,
-  getPageTags,
   getPageCategories,
   getPageFeaturedImage,
 } from "@/lib/notion";
@@ -13,7 +10,6 @@ import {
   Card,
   CardHeader,
   CardTitle,
-  CardDescription,
   CardContent,
   CardFooter,
 } from "@/components/ui/card";
