@@ -4,10 +4,9 @@ import { Providers } from "./providers";
 import { ThemeToggle } from "@/components/theme-toggle";
 import Link from "next/link";
 
-
 export const metadata: Metadata = {
-  title: "@aniltalla",
-  description: "Welcome to Anil Talla's blog",
+  title: "Product and Engineering Leader - Anil Talla",
+  description: "Product and Engineering Leader - Anil Talla",
 };
 
 export default function RootLayout({
@@ -18,7 +17,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/favicon.ico" sizes="any" />
         <link
           href="https://fonts.googleapis.com/css2?family=Onest:wght@100..900&display=swap"
           rel="stylesheet"
@@ -36,7 +35,6 @@ export default function RootLayout({
               <ThemeToggle />
             </header>
             <main>{children}</main>
-
           </div>
         </Providers>
       </body>
