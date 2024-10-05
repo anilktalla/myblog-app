@@ -1,6 +1,5 @@
 import {
   getDatabase,
-  NotionPage,
   getPageTitle,
   getPageCategories,
   getPageFeaturedImage,
@@ -15,6 +14,7 @@ import {
 } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import AboutMe from "@/components/AboutMe";
+import { NotionPage } from "@/lib/types";
 
 export default async function Home() {
   const posts = await getDatabase();
