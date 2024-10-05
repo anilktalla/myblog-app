@@ -36,7 +36,7 @@
   }
 
   .dark {
-    --background: linear-gradient(to right, #434343, #000000);
+    --background: linear-gradient(157deg, rgba(3,2,7,1) 0%, rgba(55,53,65,1) 100%);
     --foreground: #000000;
 
     --card: linear-gradient(to right, #000000, #434343);
