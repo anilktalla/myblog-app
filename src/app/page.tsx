@@ -32,7 +32,7 @@ export default async function Home() {
               key={post.id}
               className="transition-transform hover:scale-105 block h-full"
             >
-              <Card className="h-[400px] w-full bg-card hover:bg-accent overflow-hidden relative">
+              <Card className="h-[400px] w-full bg-card hover:bg-accent overflow-hidden relative shadow-2xl border-0">
                 {featuredImage && (
                   <div
                     className="absolute inset-0 bg-cover bg-center z-0"
